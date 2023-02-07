@@ -18,7 +18,7 @@ refs.input.addEventListener('input', debounce(onInputChange, DEBOUNCE_DELAY));
 
 function onInputChange(event) {
   const country = event.target.value.trim();
- if (event.target.value === "") {
+ if (country === "") {
         Notiflix.Notify.info('Please, enter something');
        clearPage();
         return
