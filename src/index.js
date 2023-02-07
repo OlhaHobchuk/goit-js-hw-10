@@ -22,11 +22,11 @@ function onInputChange(event) {
         Notiflix.Notify.info('Please, enter something');
        clearPage();
         return
-    }
-  
-  fetchCountries(country)
+ } else {
+     fetchCountries(country)
     .then(makeMarkup)
     .catch(onFetchError);
+    }
 }
 
 function makeMarkup (countries) {
@@ -70,6 +70,7 @@ function makeMarkup (countries) {
 }
 
 function onFetchError() {
+    clearPage()
   Notiflix.Notify.failure('Oops, there is no country with that name');
 }
 
